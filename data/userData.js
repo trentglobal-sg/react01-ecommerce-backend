@@ -23,10 +23,10 @@ async function getUserById(id) {
     // ]
     //
     // but we want = [1,2]
-    const marketingPreferenceIds = marketingPreferenceRows.map(row => row.preference_id);
+    const marketingPreferenceIds = marketingPreferenceRows.map(row => String(row.preference_id));
 
     const user = rows[0];
-    user.marketingPreference = marketingPreferenceIds;
+    user.marketingPreferences = marketingPreferenceIds;
 
     return user;
 }

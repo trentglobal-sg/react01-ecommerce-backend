@@ -13,10 +13,15 @@ app.use(cors());
 // require in the routes
 const productRouter = require("./routes/products");
 const userRouter = require("./routes/users");
+const cartRouter = require('./routes/cart');
+const checkoutRouter = require('./routes/checkout')
 
 // register the router
 app.use('/api/products', productRouter);
 app.use('/api/users', userRouter);
+app.use('/api/cart', cartRouter);
+app.use('/api/checkout', checkoutRouter);
+
 
 // Routes
 app.get('/', (req, res) => {
